@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/drawable/background_splash.xml" value="0.1245" />
         <entry key="app/src/main/res/drawable/background_topmenu.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/drop_shadow.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_baseline_thumb_up_alt_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/selector_book_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/selector_home_icon.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/selector_menu_color.xml" value="0.1" />
@@ -20,7 +21,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2760942760942761" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.27794871794871795" />
         <entry key="app/src/main/res/layout/fragment_book.xml" value="0.20462962962962963" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2721718553714759" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.17006802721088435" />
         <entry key="app/src/main/res/layout/fragment_my.xml" value="0.20462962962962963" />
         <entry key="app/src/main/res/layout/fragment_order.xml" value="0.20462962962962963" />
         <entry key="app/src/main/res/layout/fragment_store.xml" value="0.20462962962962963" />

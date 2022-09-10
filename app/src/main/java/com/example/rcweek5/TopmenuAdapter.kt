@@ -8,7 +8,7 @@ import com.example.rcweek5.databinding.ItemTopmenuBinding
 
 class TopmenuAdapter(val topmenuList: ArrayList<Topmenus>) : RecyclerView.Adapter<TopmenuAdapter.CustomViewHolder>(){
 
-    class CustomViewHolder(val binding: ItemTopmenuBinding) : RecyclerView.ViewHolder(binding.root) {
+    class CustomViewHolder(private val binding: ItemTopmenuBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(topmenu: Topmenus) = with(binding){
             ivEvent.setImageResource(topmenu.img)
             tvEvent.text = topmenu.about

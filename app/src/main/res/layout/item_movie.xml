@@ -75,6 +75,7 @@
                 android:src="@drawable/img_star"/>
 
             <TextView
+                android:id="@+id/tv_star"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8.8"
