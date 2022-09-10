@@ -11,6 +11,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rcweek5.databinding.FragmentHomeBinding
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
@@ -19,6 +20,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var date: String
+    private val rvAdapter = MovieAdapter()
 
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -26,9 +28,8 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-
 
 
         val topmenuList = arrayListOf(
@@ -51,23 +52,7 @@ class HomeFragment : Fragment() {
         binding.rvTopmenu.setHasFixedSize(true)
         binding.rvTopmenu.adapter = TopmenuAdapter(topmenuList)
 
-        //rv : movie
-        binding.rvMovie.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvMovie.setHasFixedSize(true)
-        binding.rvMovie.adapter = MovieAdapter()
 
-
-
-        return binding.root
-
-        //서비스 실행 위한
-        retrofitWork()
-    }
-
-
-    private fun retrofitWork() {
-        val service = MovieApi.movieInterface
 
         //어제 날짜 구하기
         val calendar = Calendar.getInstance()
@@ -76,25 +61,38 @@ class HomeFragment : Fragment() {
         val formatter = SimpleDateFormat("yyyyMMdd") //날짜의 모양을 원하는 대로 변경 해 준다.
         date = formatter.format(timeToDate)
 
-        service.getMovieData(getString(R.string.api_key), "20220909").enqueue(object : retrofit2.Callback<MovieResponse>{
-            override fun onResponse(call: Call<MovieResponse>, response: Response<MovieResponse>) {
-                if (response.isSuccessful){
-                    Log.d("TAG", response.body().toString())
-                    val result = response.body()?.boxOfficeResult?.dailyBoxOfficeList
-                    MovieAdapter().submitList(result!!)
-                }else {
-                    Log.d(
-                        "homefragment",
-                        "getWeatherData - onResponse : Error code ${response.code()}"
-                    )
+
+        val service = MovieApi.movieInterface
+        service.getMovieData(getString(R.string.api_key), "${date}")
+            .enqueue(object : Callback<MovieResponse> {
+                override fun onResponse(
+                    call: Call<MovieResponse>,
+                    response: Response<MovieResponse>
+                ) {
+                    if (response.isSuccessful) {
+                        Log.d("TAG", response.body().toString())
+                        val result = response.body()?.boxOfficeResult?.dailyBoxOfficeList
+                        rvAdapter.submitList(result!!)
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
-                Log.d("TAG", t.message.toString())
+                override fun onFailure(call: Call<MovieResponse>, t: Throwable) {
+                    Log.d("TAG", t.message.toString())
 
-            }
+                }
 
-        })
+            })
+
+
+        //rv : movie
+        binding.rvMovie.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        binding.rvMovie.adapter = rvAdapter
+
+
+        return binding.root
+
     }
+
+
 }

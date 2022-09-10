@@ -84,24 +84,50 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/top_horizontal"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_110"
-                android:layout_marginTop="@dimen/margin_5"
+                android:layout_marginTop="@dimen/margin_15"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_topmenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <HorizontalScrollView
+                    android:scrollbars="none"
                     android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:listitem="@layout/item_topmenu" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
+
+                    <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="@dimen/margin_15"
+                        >
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_topmenu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:listitem="@layout/item_topmenu" />
+
+                    </RelativeLayout>
+
+
+
+                </HorizontalScrollView>
+
+
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -121,7 +147,7 @@
                     android:id="@+id/home_tablayout"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/margin_27"
-                    android:layout_marginTop="@dimen/margin_23"
+                    android:layout_marginTop="@dimen/margin_25"
                     android:paddingStart="@dimen/margin_5"
                     app:tabGravity="start"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -172,84 +198,93 @@
 
                 </com.google.android.material.tabs.TabLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/movies"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/margin_345"
+                <HorizontalScrollView
                     android:layout_marginTop="@dimen/margin_15"
+                    android:id="@+id/movies"
+                    app:layout_constraintTop_toBottomOf="@id/home_tablayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/margin_350"
+                    android:scrollbars="none"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/home_tablayout">
+                    >
 
-                    <HorizontalScrollView
+                    <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:scrollbars="none"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/margin_17">
 
-                        <LinearLayout
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_movie"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:paddingStart="@dimen/margin_17">
+                            tools:listitem="@layout/item_movie" />
 
 
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/rv_movie"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                tools:listitem="@layout/item_movie" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_centerVertical="true"
+                            android:id="@+id/constraint_more"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/margin_20"
+                            android:layout_marginLeft="22dp"
+                            android:layout_marginEnd="-2dp"
+                            android:layout_toRightOf="@id/rv_movie"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/rv_movie"
+                            app:layout_constraintTop_toTopOf="parent">
 
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:id="@+id/constraint_more"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_marginStart="@dimen/margin_20"
-                                app:layout_constraintBottom_toBottomOf="parent"
+                            <ImageView
+                                android:id="@+id/img_more"
+                                android:layout_width="@dimen/margin_85"
+                                android:layout_height="@dimen/margin_90"
+                                android:layout_marginStart="@dimen/margin_30"
+                                android:layout_marginEnd="@dimen/margin_85"
+                                android:background="@drawable/img_more"
+                                android:backgroundTint="@color/divider"
+                                android:button="@null"
+                                app:layout_constraintBottom_toTopOf="@id/tv_more"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toEndOf="@id/rv_movie"
-                                app:layout_constraintTop_toTopOf="parent">
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                                <ImageView
-                                    android:id="@+id/img_more"
-                                    android:layout_width="@dimen/margin_85"
-                                    android:layout_height="@dimen/margin_90"
-                                    android:layout_marginEnd="@dimen/margin_85"
-                                    android:background="@drawable/img_more"
-                                    android:backgroundTint="@color/divider"
-                                    android:button="@null"
-                                    app:layout_constraintBottom_toTopOf="@id/tv_more"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
+                            <TextView
+                                android:id="@+id/tv_more"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="더보기"
+                                android:textColor="@color/divider"
+                                android:textSize="16sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/img_more"
+                                app:layout_constraintStart_toStartOf="@id/img_more"
+                                app:layout_constraintTop_toBottomOf="@id/img_more"
 
-                                <TextView
-                                    android:id="@+id/tv_more"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="더보기"
-                                    android:textColor="@color/divider"
-                                    android:textSize="16sp"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="@id/img_more"
-                                    app:layout_constraintStart_toStartOf="@id/img_more"
-                                    app:layout_constraintTop_toBottomOf="@id/img_more"
+                                />
 
-                                    />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                        </LinearLayout>
+                    </RelativeLayout>
 
-                    </HorizontalScrollView>
+                </HorizontalScrollView>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/margin_350"-->
+<!--                    android:layout_marginTop="@dimen/margin_15"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/home_tablayout">-->
+
+
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
 
                 <TextView
                     android:id="@+id/viewmoremovie"

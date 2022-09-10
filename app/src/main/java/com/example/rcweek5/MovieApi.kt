@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 object MovieApi {
-    private const val BASE_URL = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/"
+    private const val BASE_URL = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/"
 
     private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient.Builder().addInterceptor(HttpLoggingInterceptor().apply {

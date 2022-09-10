@@ -7,8 +7,9 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/movie"
         app:cardElevation="@dimen/margin_10"
-        android:layout_marginHorizontal="@dimen/margin_5"
-        android:layout_marginBottom="@dimen/margin_15"
+        android:layout_marginStart="@dimen/margin_5"
+        android:layout_marginEnd="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_17"
         android:layout_width="@dimen/margin_160"
         android:layout_height="@dimen/margin_330"
         app:cardCornerRadius="@dimen/margin_10"
@@ -41,12 +42,15 @@
             android:layout_gravity="bottom">
 
             <TextView
+                android:paddingEnd="@dimen/margin_20"
                 android:id="@+id/tv_movie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_12"
                 android:layout_marginTop="@dimen/margin_13"
                 android:text="공조2: 인터내셔날"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
