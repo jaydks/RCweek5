@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_250"
+        android:background="@drawable/background_topmenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_55"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_appbar_logo"
+            android:layout_width="@dimen/margin_120"
+            android:layout_height="@dimen/margin_40"
+            android:src="@drawable/appbarlogo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_40"
+            android:layout_marginStart="@dimen/margin_10"
+            android:src="@drawable/appbar_code"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="@dimen/margin_55"
+            android:layout_height="@dimen/margin_25"
+            android:background="@drawable/background_appbar_tv_mfeed"
+            android:gravity="center"
+            android:text="M·FEED"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/menu"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="@dimen/margin_45"
+            android:layout_height="@dimen/margin_27"
+            android:layout_marginEnd="@dimen/margin_5"
+            android:src="@drawable/ic_baseline_menu_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_110"
+                android:layout_marginTop="@dimen/margin_5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/rv_topmenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:listitem="@layout/item_topmenu" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_15"
+                android:background="@drawable/background_main_round"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/top_horizontal">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/home_tablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_27"
+                    android:layout_marginTop="@dimen/margin_23"
+                    android:paddingStart="@dimen/margin_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tabIndicatorColor="@color/black"
+                    app:tabIndicatorFullWidth="false"
+                    app:tabMode="scrollable"
+                    app:tabSelectedTextColor="@color/black"
+                    app:tabTextAppearance="@style/tabTextStyle"
+                    app:tabTextColor="@color/divider">
+
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#박스오피스" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#상영예정" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#돌비시네마" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#라스트특가" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#단독" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#클소" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#필소" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/movies"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_345"
+                    android:layout_marginTop="@dimen/margin_15"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_tablayout">
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/margin_17">
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_movie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:listitem="@layout/item_movie" />
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/constraint_more"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/margin_20"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/rv_movie"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:id="@+id/img_more"
+                                    android:layout_width="@dimen/margin_85"
+                                    android:layout_height="@dimen/margin_90"
+                                    android:layout_marginEnd="@dimen/margin_85"
+                                    android:background="@drawable/img_more"
+                                    android:backgroundTint="@color/divider"
+                                    android:button="@null"
+                                    app:layout_constraintBottom_toTopOf="@id/tv_more"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/tv_more"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="더보기"
+                                    android:textColor="@color/divider"
+                                    android:textSize="16sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="@id/img_more"
+                                    app:layout_constraintStart_toStartOf="@id/img_more"
+                                    app:layout_constraintTop_toBottomOf="@id/img_more"
+
+                                    />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/viewmoremovie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_17"
+                    android:layout_marginTop="@dimen/margin_1"
+                    android:text="더 많은 영화보기"
+                    android:textColor="@color/gray2"
+                    android:textSize="11.5sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_moviefeed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/movies" />
+
+                <ImageView
+                    android:layout_width="@dimen/margin_10"
+                    android:layout_height="@dimen/margin_15"
+                    android:layout_marginStart="@dimen/margin_4"
+                    android:src="@drawable/img_right_more"
+                    app:layout_constraintStart_toEndOf="@id/viewmoremovie"
+                    app:layout_constraintTop_toBottomOf="@id/movies" />
+
+
+                <TextView
+                    android:id="@+id/tv_moviefeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_17"
+                    android:layout_marginTop="@dimen/margin_23"
+                    android:layout_marginBottom="@dimen/margin_15"
+                    android:text="무비피드"
+                    android:textColor="@color/black"
+                    android:textSize="21.5sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/cv_moviefeed1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewmoremovie" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_moviefeed1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_265"
+                    android:layout_marginHorizontal="@dimen/margin_17"
+                    android:layout_marginTop="@dimen/margin_15"
+                    app:cardCornerRadius="@dimen/margin_10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_moviefeed">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_moviefeedbackground"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_23"
+                        android:layout_marginTop="@dimen/margin_23"
+                        android:text="이번주\n박스오피스"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/margin_70"
+                        android:layout_gravity="bottom"
+                        android:background="@color/clearblack">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_people"
+                            android:layout_width="@dimen/margin_37"
+                            android:layout_height="@dimen/margin_37"
+                            android:layout_marginStart="@dimen/margin_23"
+                            app:cardCornerRadius="@dimen/margin_20"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/img_people" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/tv_people"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_10"
+                            android:layout_marginEnd="@dimen/margin_5"
+                            android:text="잡식성쿼카"
+                            android:textColor="@color/yellowwhite2"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@id/originalcontents"
+                            app:layout_constraintStart_toEndOf="@id/cv_people"
+                            app:layout_constraintTop_toTopOf="@id/cv_people"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/originalcontents"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_3"
+                            android:text="ORIGINAL CONTENTS"
+                            android:textColor="@color/yellowwhite"
+                            android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="@id/cv_people"
+                            app:layout_constraintStart_toStartOf="@id/tv_people"
+                            app:layout_constraintTop_toBottomOf="@id/tv_people" />
+
+                        <ImageView
+                            android:layout_width="@dimen/margin_16"
+                            android:layout_height="@dimen/margin_16"
+                            android:layout_marginEnd="@dimen/margin_5"
+                            android:src="@drawable/ic_baseline_thumb_up_alt_24"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_like"
+                            app:layout_constraintEnd_toStartOf="@id/tv_like"
+                            app:layout_constraintTop_toTopOf="@id/tv_like" />
+
+                        <TextView
+                            android:id="@+id/tv_like"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/margin_15"
+                            android:layout_marginBottom="@dimen/margin_15"
+                            android:text="6"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_currentmovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_100"
+                    android:layout_marginStart="@dimen/margin_17"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginEnd="@dimen/margin_17"
+                    android:layout_marginBottom="@dimen/margin_40"
+                    app:cardCornerRadius="@dimen/margin_10"
+                    app:cardElevation="@dimen/margin_7"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_moviefeed1">
+
+                    <ImageView
+                        android:id="@+id/iv_current"
+                        android:layout_width="@dimen/margin_100"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        android:src="@drawable/img_current" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/margin_100">
+
+                        <TextView
+                            android:id="@+id/tv_current1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_17"
+                            android:layout_marginTop="@dimen/margin_17"
+                            android:text="지금 주목받는 영화 한 편"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@id/tv_current2"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_current2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_17"
+                            android:layout_marginEnd="@dimen/margin_17"
+                            android:layout_marginBottom="@dimen/margin_11"
+                            android:text="유괴사건의 골든타임 48시간, 타깃이 된 그녀의 강렬한 추격이 시작된다!"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_current1" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

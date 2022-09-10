@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_category_home"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.rcweek5.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_navigation_category_store"
+            app:destination="@id/navigation_category_store" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_category_store"
+        android:name="com.example.rcweek5.StoreFragment"
+        android:label="fragment_store"
+        tools:layout="@layout/fragment_store" />
+    <fragment
+        android:id="@+id/navigation_category_book"
+        android:name="com.example.rcweek5.BookFragment"
+        android:label="fragment_book"
+        tools:layout="@layout/fragment_book" />
+    <fragment
+        android:id="@+id/navigation_category_order"
+        android:name="com.example.rcweek5.OrderFragment"
+        android:label="fragment_order"
+        tools:layout="@layout/fragment_order" />
+    <fragment
+        android:id="@+id/navigation_category_my"
+        android:name="com.example.rcweek5.MyFragment"
+        android:label="fragment_my"
+        tools:layout="@layout/fragment_my" />
+</navigation>

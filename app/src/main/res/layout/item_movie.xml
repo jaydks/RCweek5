@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/movie"
+        app:cardElevation="@dimen/margin_10"
+        android:layout_marginHorizontal="@dimen/margin_5"
+        android:layout_marginBottom="@dimen/margin_15"
+        android:layout_width="@dimen/margin_160"
+        android:layout_height="@dimen/margin_330"
+        app:cardCornerRadius="@dimen/margin_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_movie"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_220"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_movie" />
+
+        <TextView
+            android:id="@+id/tv_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_7"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="italic|bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_110"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:id="@+id/tv_movie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_12"
+                android:layout_marginTop="@dimen/margin_13"
+                android:text="공조2: 인터내셔날"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_bookrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="예매율 65.3%  ·"
+                app:layout_constraintTop_toBottomOf="@id/tv_movie"
+                app:layout_constraintStart_toStartOf="@id/tv_movie"
+                android:textSize="13sp"
+                android:layout_marginTop="@dimen/margin_3"
+                android:textColor="@color/gray2"
+                />
+
+            <ImageView
+                app:layout_constraintStart_toEndOf="@id/tv_bookrate"
+                app:layout_constraintTop_toTopOf="@id/tv_bookrate"
+                app:layout_constraintBottom_toBottomOf="@id/tv_bookrate"
+                android:id="@+id/img_star"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_25"
+                android:src="@drawable/img_star"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8.8"
+                app:layout_constraintBottom_toBottomOf="@id/img_star"
+                app:layout_constraintStart_toEndOf="@id/img_star"
+                app:layout_constraintTop_toTopOf="@id/img_star"
+                android:textSize="13.5sp"
+                android:textColor="@color/gray2"
+                />
+
+            <TextView
+                android:background="@drawable/background_moviebook_round"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="바로예매"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:paddingVertical="@dimen/margin_5"
+                android:paddingHorizontal="@dimen/margin_20"
+                app:layout_constraintTop_toBottomOf="@id/tv_bookrate"
+                app:layout_constraintStart_toStartOf="@id/tv_bookrate"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

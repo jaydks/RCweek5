@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item android:drawable="@color/white"/>
+
+
+    <item
+        android:gravity="center"
+        android:width="@dimen/margin_200"
+        android:height="@dimen/margin_80"
+        android:drawable="@drawable/img_splash_logo"
+        tools:ignore="ResourceCycle" />
+</layer-list>
