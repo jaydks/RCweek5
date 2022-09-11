@@ -20,7 +20,5 @@ class MainActivity : AppCompatActivity() {
         navController?.let{
             binding.bottomnav.setupWithNavController(it)
         }
-
-
     }
 }

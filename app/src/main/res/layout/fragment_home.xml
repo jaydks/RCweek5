@@ -53,11 +53,11 @@
             android:textColor="@color/white"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/menu"
+            app:layout_constraintEnd_toStartOf="@id/sidemenu"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/menu"
+            android:id="@+id/sidemenu"
             android:layout_width="@dimen/margin_45"
             android:layout_height="@dimen/margin_27"
             android:layout_marginEnd="@dimen/margin_5"
@@ -147,7 +147,7 @@
                     android:id="@+id/home_tablayout"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/margin_27"
-                    android:layout_marginTop="@dimen/margin_25"
+                    android:layout_marginTop="@dimen/margin_23"
                     android:paddingStart="@dimen/margin_5"
                     app:tabGravity="start"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -199,7 +199,7 @@
                 </com.google.android.material.tabs.TabLayout>
 
                 <HorizontalScrollView
-                    android:layout_marginTop="@dimen/margin_15"
+                    android:layout_marginTop="@dimen/margin_20"
                     android:id="@+id/movies"
                     app:layout_constraintTop_toBottomOf="@id/home_tablayout"
                     android:layout_width="wrap_content"

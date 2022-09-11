@@ -16,8 +16,7 @@
     </style>
 
     <style name="tabTextStyle" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">13sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14.5sp</item>
     </style>
 
     <style name="Theme.RCweek5.Splash">

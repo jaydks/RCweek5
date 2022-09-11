@@ -1,5 +1,6 @@
 package com.example.rcweek5
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -32,6 +33,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
+        //topmenu 데이터
         val topmenuList = arrayListOf(
             Topmenus(R.drawable.top_1, "추석대피소"),
             Topmenus(R.drawable.top_2, "헌트 돌비"),
@@ -90,8 +92,14 @@ class HomeFragment : Fragment() {
         binding.rvMovie.adapter = rvAdapter
 
 
-        return binding.root
 
+        //사이드메뉴
+        binding.sidemenu.setOnClickListener {
+            val intent = Intent(context, SideActivity::class.java)
+            startActivity(intent)
+        }
+
+        return binding.root
     }
 
 

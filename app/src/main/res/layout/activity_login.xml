@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_60"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="@dimen/margin_30"
+            android:layout_height="@dimen/margin_30"
+            android:layout_marginEnd="@dimen/margin_20"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enteridpw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_15"
+        android:paddingHorizontal="@dimen/margin_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar">
+
+        <EditText
+            android:id="@+id/enterid"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_60"
+            android:layout_marginHorizontal="@dimen/margin_10"
+            android:backgroundTint="@color/divider"
+            android:hint="아이디"
+            android:textColorHint="@color/divider"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/enterpw"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_60"
+            android:layout_marginHorizontal="@dimen/margin_10"
+            android:backgroundTint="@color/divider"
+            android:hint="아이디"
+            android:textColorHint="@color/divider"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enterid" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="@dimen/margin_30"
+        android:layout_height="@dimen/margin_30"
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_5"
+        android:buttonTint="@color/purple_700"
+        android:checked="true"
+        app:layout_constraintEnd_toStartOf="@id/checkbox_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/enteridpw"
+        app:layout_goneMarginTop="@dimen/margin_5" />
+
+    <TextView
+        android:id="@+id/checkbox_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_1"
+        android:layout_marginEnd="@dimen/margin_35"
+        android:text="자동로그인"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/checkbox"
+        app:layout_constraintStart_toEndOf="@id/checkbox"
+        app:layout_constraintTop_toTopOf="@id/checkbox"
+
+        />
+
+    <TextView
+        android:id="@+id/phonelogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_5"
+        android:layout_marginEnd="@dimen/margin_12"
+        android:text="휴대폰 간편로그인"
+        android:textColor="@color/blue2"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/checkbox"
+        app:layout_constraintEnd_toStartOf="@id/textadv"
+        app:layout_constraintTop_toBottomOf="@id/enteridpw"
+
+        />
+
+    <TextView
+        android:id="@+id/textadv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_20"
+        android:background="@drawable/background_round_stroke"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/margin_7"
+        android:paddingVertical="1.5dp"
+        android:text="광고"
+        android:textColor="@color/blue2"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/phonelogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/phonelogin"
+
+        />
+
+    <TextView
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_60"
+        android:layout_marginHorizontal="@dimen/margin_22"
+        android:layout_marginTop="@dimen/margin_40"
+        android:background="@color/purple4"
+        android:gravity="center"
+        android:text="로그인"
+        android:textColor="@color/white2"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phonelogin" />
+
+    <GridLayout
+        android:id="@+id/signinorupornotmember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:columnCount="5"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login">
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:background="@android:color/transparent"
+            android:text="ID/PW 찾기"
+            android:textColor="@color/gray4"
+            android:textSize="14.5sp" />
+
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="@dimen/margin_11"
+            android:layout_gravity="center_vertical"
+            android:background="@color/divider2" />
+
+
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_10"
+            android:layout_marginEnd="@dimen/margin_10"
+            android:background="@android:color/transparent"
+            android:text="회원가입"
+            android:textColor="@color/gray4"
+            android:textSize="14.5sp" />
+
+        <View
+            android:layout_width="1.5dp"
+            android:layout_height="@dimen/margin_11"
+            android:layout_gravity="center_vertical"
+            android:background="@color/divider2" />
+
+        <TextView
+
+            android:id="@+id/notmemberbookcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_10"
+            android:background="@android:color/transparent"
+            android:text="비회원 예매확인"
+            android:textColor="@color/gray4"
+            android:textSize="15sp" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/margin_35"
+        android:id="@+id/sns"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_50"
+        android:layout_marginBottom="@dimen/margin_6"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signinorupornotmember">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginEnd="@dimen/margin_35"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_50"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/margin_30"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:background="@color/blue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/img_facebook" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginEnd="@dimen/margin_35"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_50"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/margin_30"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:background="@color/green"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/img_naver" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_marginEnd="@dimen/margin_35"
+            android:id="@+id/kakao_login_button"
+            android:backgroundTint="@color/yellow"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_50"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/margin_30">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/img_kakaotalk" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_50"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/margin_30"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:background="@color/red"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:scaleType="centerInside"
+                android:src="@drawable/img_payco" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/margin_300"
+        android:layout_height="@dimen/margin_240"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sns"
+        android:layout_marginTop="@dimen/margin_30"
+        android:src="@drawable/im_adv_login"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

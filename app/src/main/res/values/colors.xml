@@ -14,10 +14,27 @@
     <color name="bnblue">#5FCEE2</color>
     <color name="lightblue2">#59BFCE</color>
     <color name="bngray">#474852</color>
-    <color name="divider">#D2D2D2</color>
+    <color name="divider">#D7D7D7</color>
     <color name="gray2">#9B9CA3</color>
     <color name="yellowwhite2">#D4D1C9</color>
     <color name="yellowwhite">#89867A</color>
     <color name="clearblack">#B3000000</color>
-
+    <color name="blueblack">#150D2D</color>
+    <color name="lightblue3">#A4CEDF</color>
+    <color name="purple2">#40395E</color>
+    <color name="purple3">#6611AE</color>
+    <color name="gray3">#B4B4B4</color>
+    <color name="divider2">#EEEEEE</color>
+    <color name="blue">#6080BD</color>
+    <color name="lightblue4">#F0FAFF</color>
+    <color name="lightblue5">#1E9692</color>
+    <color name="lightpurple">#AAA8CD</color>
+    <color name="blue2">#658FB8</color>
+    <color name="purple4">#6841BF</color>
+    <color name="white2">#EBDEF4</color>
+    <color name="green">#5FB83A</color>
+    <color name="yellow">#FBEA4E</color>
+    <color name="red">#D84340</color>
+    <color name="blue3">#52679F</color>
+    <color name="gray4">#7D7D7D</color>
 </resources>
